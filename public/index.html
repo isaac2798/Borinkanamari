@@ -48,6 +48,110 @@
             75% { transform: translateX(5px) translateY(-10px); }
         }
 
+        /* Decoraciones de fuego flotantes */
+        .fire-decoration {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            z-index: -1;
+            animation: fireFloat 8s ease-in-out infinite;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.7));
+        }
+        
+        .fire-1 { top: 20%; left: 8%; animation-delay: 0s; }
+        .fire-2 { top: 65%; right: 12%; animation-delay: 3s; }
+        .fire-3 { bottom: 25%; left: 15%; animation-delay: 6s; width: 55px; height: 55px; }
+        .fire-4 { top: 45%; right: 8%; animation-delay: 2s; width: 40px; height: 40px; }
+        .fire-5 { bottom: 60%; right: 20%; animation-delay: 4s; }
+        .fire-6 { top: 80%; left: 25%; animation-delay: 7s; width: 55px; height: 55px; }
+        .fire-7 { top: 35%; left: 35%; animation-delay: 1.5s; width: 40px; height: 40px; }
+        .fire-8 { bottom: 70%; right: 40%; animation-delay: 5s; width: 50px; height: 50px; }
+
+        /* Decoraciones de abanicos rosados */
+        .pink-fan-decoration {
+            position: fixed;
+            width: 140px;
+            height: 90px;
+            z-index: -1;
+            animation: fanSway 10s ease-in-out infinite;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.6));
+        }
+        
+        .pink-fan-1 { top: 10%; right: 5%; animation-delay: 1s; }
+        .pink-fan-2 { bottom: 15%; left: 8%; animation-delay: 4s; transform: scaleX(-1); }
+        .pink-fan-3 { top: 55%; left: 5%; animation-delay: 7s; width: 100px; height: 65px; }
+        .pink-fan-4 { bottom: 45%; right: 15%; animation-delay: 2s; width: 90px; height: 60px; }
+        .pink-fan-5 { top: 70%; right: 30%; animation-delay: 6s; width: 110px; height: 70px; }
+        .pink-fan-6 { top: 20%; left: 25%; animation-delay: 8s; width: 95px; height: 62px; }
+
+        /* Decoraciones de fuego con texto "Love" */
+        .love-fire-decoration {
+            position: fixed;
+            width: 120px;
+            height: 75px;
+            z-index: -1;
+            animation: loveFireGlow 12s ease-in-out infinite;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.8));
+        }
+        
+        .love-fire-1 { top: 30%; left: 12%; animation-delay: 2s; }
+        .love-fire-2 { bottom: 35%; right: 8%; animation-delay: 6s; }
+        .love-fire-3 { top: 75%; right: 25%; animation-delay: 9s; width: 80px; height: 50px; }
+        .love-fire-4 { top: 15%; right: 40%; animation-delay: 4s; width: 90px; height: 55px; }
+        .love-fire-5 { bottom: 80%; left: 40%; animation-delay: 11s; width: 85px; height: 52px; }
+
+        /* Decoraciones de mariposas */
+        .butterfly-decoration {
+            position: fixed;
+            width: 50px;
+            height: 38px;
+            z-index: -1;
+            animation: butterflyFly 15s ease-in-out infinite;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.6));
+        }
+        
+        .butterfly-1 { top: 25%; right: 18%; animation-delay: 1s; }
+        .butterfly-2 { top: 50%; left: 18%; animation-delay: 5s; }
+        .butterfly-3 { bottom: 30%; left: 25%; animation-delay: 8s; width: 35px; height: 25px; }
+        .butterfly-4 { top: 40%; right: 30%; animation-delay: 3s; }
+        .butterfly-5 { bottom: 50%; right: 35%; animation-delay: 10s; width: 30px; height: 22px; }
+        .butterfly-6 { top: 60%; left: 30%; animation-delay: 12s; }
+        .butterfly-7 { top: 80%; right: 45%; animation-delay: 14s; width: 38px; height: 28px; }
+        .butterfly-8 { top: 10%; left: 40%; animation-delay: 7s; width: 32px; height: 24px; }
+        .butterfly-9 { bottom: 15%; right: 50%; animation-delay: 16s; width: 36px; height: 27px; }
+        .butterfly-10 { top: 45%; left: 45%; animation-delay: 4s; width: 34px; height: 25px; }
+
+        /* Animaciones para las nuevas decoraciones */
+        @keyframes fireFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.7; }
+            25% { transform: translateY(-15px) rotate(5deg) scale(1.1); opacity: 0.9; }
+            50% { transform: translateY(-8px) rotate(-3deg) scale(1.05); opacity: 0.8; }
+            75% { transform: translateY(-12px) rotate(2deg) scale(1.08); opacity: 0.85; }
+        }
+
+        @keyframes fanSway {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            33% { transform: translateY(-10px) rotate(3deg); opacity: 0.8; }
+            66% { transform: translateY(-5px) rotate(-2deg); opacity: 0.7; }
+        }
+
+        @keyframes loveFireGlow {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.5; filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6)); }
+            50% { transform: translateY(-8px) scale(1.05); opacity: 0.8; filter: drop-shadow(0 0 25px rgba(255, 140, 0, 0.8)); }
+        }
+
+        @keyframes butterflyFly {
+            0% { transform: translateX(0px) translateY(0px) rotate(0deg); opacity: 0.8; }
+            25% { transform: translateX(20px) translateY(-15px) rotate(5deg); opacity: 1; }
+            50% { transform: translateX(-10px) translateY(-25px) rotate(-3deg); opacity: 0.9; }
+            75% { transform: translateX(15px) translateY(-10px) rotate(2deg); opacity: 0.95; }
+            100% { transform: translateX(0px) translateY(0px) rotate(0deg); opacity: 0.8; }
+        }
+
         /* Más coronas flotantes con diferentes tamaños */
         .crown-decoration {
             position: fixed;
@@ -118,7 +222,7 @@
         .fan-4 { bottom: 50%; left: -60px; transform: rotate(80deg); opacity: 0.6; width: 150px; height: 75px; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
-        
+
         /* Header con patrones camuflados de reina y gaming */
         .header {
             text-align: center; margin-bottom: 3rem;
@@ -399,10 +503,52 @@
             .gaming-decoration { font-size: 1rem; }
             .logo { width: 120px; }
             .header::after { font-size: 1.2rem; }
+            /* Ajustes responsive para nuevas decoraciones */
+            .fire-decoration { width: 40px; height: 40px; }
+            .pink-fan-decoration { width: 80px; height: 55px; }
+            .love-fire-decoration { width: 70px; height: 45px; }
+            .butterfly-decoration { width: 30px; height: 22px; }
         }
     </style>
 </head>
 <body>
+    <!-- Decoraciones de fuego -->
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-1">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-2">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-3">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-4">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-5">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-6">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-7">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_22-oLFm4MjG6xEbRJJExUeDLC1OwfY5GI.png" alt="" class="fire-decoration fire-8">
+    
+    <!-- Decoraciones de abanicos rosados -->
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-1">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-2">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-3">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-4">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-5">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-6">
+    
+    <!-- Decoraciones de fuego con "Love" -->
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-1">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-2">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-3">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-4">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-5">
+    
+    <!-- Decoraciones de mariposas -->
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-1">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-2">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-3">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-4">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-5">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-6">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-7">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-8">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-9">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-10">
+
     <!-- Agregando más coronas flotantes decorativas -->
     <div class="crown-decoration crown-1">♛</div>
     <div class="crown-decoration crown-2">♕</div>
@@ -425,7 +571,7 @@
     
     <div class="container">
         <header class="header">
-            <!-- Reemplazando con el nuevo logo -->
+            <!-- Usando exactamente la URL del logo proporcionado -->
             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/La_Reina_del_Manqueo_Logo-gTEK5kRmbTCKh7bpE5kV3EpFZMEsyy.png" alt="La Reina del Manqueo" class="logo">
             <h1 class="title">La Reina del Manqueo</h1>
             <p class="subtitle">Cola de Reproducción en Vivo</p>

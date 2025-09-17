@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Reina del Mangueo - Cola de Reproducción</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        /* Agregando estilos para coronas flotantes y elementos reales */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #f3e8ff 70%, #ede9fe 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Fondo mejorado con más patrones elegantes y elementos gaming sutiles */
+        body::before {
+            content: '';
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                /* Patrones de coronas sutiles */
+                radial-gradient(circle at 15% 25%, rgba(236, 72, 153, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 85% 75%, rgba(219, 39, 119, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 45% 65%, rgba(244, 114, 182, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 65% 15%, rgba(168, 85, 247, 0.08) 0%, transparent 30%),
+                /* Elementos gaming muy sutiles */
+                radial-gradient(circle at 25% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 75% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 90% 50%, rgba(251, 146, 60, 0.08) 0%, transparent 25%);
+            background-size: 
+                500px 500px, 400px 400px, 600px 600px, 450px 450px,
+                300px 300px, 350px 350px, 280px 280px;
+            z-index: -2;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        /* Animación sutil del fondo */
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(10px) translateY(-5px); }
+            50% { transform: translateX(-5px) translateY(10px); }
+            75% { transform: translateX(5px) translateY(-10px); }
+        }
+
+        /* Más coronas flotantes con diferentes tamaños */
+        .crown-decoration {
+            position: fixed;
+            font-size: 2.5rem;
+            color: rgba(236, 72, 153, 0.6);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+        }
+        
+        .crown-1 { top: 15%; right: 10%; animation-delay: 0s; }
+        .crown-2 { top: 60%; left: 5%; animation-delay: 2s; }
+        .crown-3 { bottom: 20%; right: 15%; animation-delay: 4s; }
+        .crown-4 { top: 40%; right: 5%; animation-delay: 1s; font-size: 2rem; }
+        .crown-5 { bottom: 40%; left: 10%; animation-delay: 3s; font-size: 2.2rem; }
+        .crown-6 { top: 25%; left: 15%; animation-delay: 5s; font-size: 1.8rem; }
+        .crown-7 { bottom: 60%; right: 25%; animation-delay: 3.5s; font-size: 2.1rem; }
+
+        /* Elementos gaming flotantes muy sutiles */
+        .gaming-decoration {
+            position: fixed;
+            font-size: 1.5rem;
+            z-index: -1;
+            animation: gameFloat 8s ease-in-out infinite;
+            opacity: 0.4;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+        }
+        
+        .rocket-1 { top: 30%; right: 20%; color: rgba(59, 130, 246, 0.7); animation-delay: 1s; }
+        .rocket-2 { bottom: 35%; left: 20%; color: rgba(59, 130, 246, 0.6); animation-delay: 4s; }
+        .fortnite-1 { top: 70%; right: 8%; color: rgba(34, 197, 94, 0.7); animation-delay: 2s; }
+        .fortnite-2 { top: 45%; left: 8%; color: rgba(34, 197, 94, 0.6); animation-delay: 6s; }
+
+        @keyframes gameFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+            33% { transform: translateY(-15px) rotate(3deg); opacity: 0.7; }
+            66% { transform: translateY(-8px) rotate(-2deg); opacity: 0.5; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.9; }
+        }
+
+        /* Decoraciones de abanico mejoradas con más variedad */
+        .fan-decoration {
+            position: fixed;
+            width: 200px; height: 100px;
+            background: conic-gradient(from 0deg, 
+                rgba(236, 72, 153, 0.25) 0deg 60deg,
+                rgba(219, 39, 119, 0.18) 60deg 120deg,
+                rgba(244, 114, 182, 0.22) 120deg 180deg,
+                transparent 180deg 360deg);
+            border-radius: 0 0 200px 200px;
+            z-index: -1;
+            filter: blur(0.3px);
+            animation: fanRotate 15s linear infinite;
+        }
+
+        @keyframes fanRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        .fan-1 { top: 10%; right: -50px; transform: rotate(45deg); }
+        .fan-2 { bottom: 20%; left: -50px; transform: rotate(-30deg); }
+        .fan-3 { top: 50%; right: -80px; transform: rotate(120deg); opacity: 0.8; }
+        .fan-4 { bottom: 50%; left: -60px; transform: rotate(80deg); opacity: 0.6; width: 150px; height: 75px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
+        
+        /* Header con patrones camuflados de reina y gaming */
+        .header {
+            text-align: center; margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 
+                0 8px 32px rgba(236, 72, 153, 0.15),
+                0 0 0 1px rgba(236, 72, 153, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Patrones camuflados en el fondo blanco del header */
+        .header::after {
+            content: '♛ ⚽ 🏆 ♕ 🎮 ♛ 🎯 ♕ 🏅 ♛ ⚡ ♕ 🎪 ♛ 🎨 ♕ 🚀 ♛ 🎵 ♕ 👑 ♛ 🎲 ♕';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 1.8rem;
+            opacity: 0.08;
+            z-index: -1;
+            line-height: 1.6;
+            padding: 1rem;
+            animation: patternShift 15s linear infinite;
+        }
+
+        @keyframes patternShift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-20px); }
+        }
+
+        /* Efecto de brillo sutil en el header */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 8s infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        /* Logo actualizado con el nuevo diseño */
+        .logo { 
+            width: 150px; 
+            margin-bottom: 1.5rem; 
+            filter: drop-shadow(0 6px 12px rgba(236, 72, 153, 0.4));
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Título con efectos más elegantes */
+        .title {
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.8rem; 
+            font-weight: 700;
+            background: linear-gradient(135deg, #ec4899, #db2777, #be185d, #a21caf);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            background-clip: text; 
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(236, 72, 153, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Decoración de corona en el título */
+        .title::before {
+            content: '♛';
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            font-size: 1.5rem;
+            color: rgba(236, 72, 153, 0.6);
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .subtitle { 
+            color: #be185d; 
+            font-size: 1.2rem; 
+            font-weight: 500; 
+            opacity: 0.9;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Container de cola con patrones sutiles de fondo */
+        .queue-container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 
+                0 15px 45px rgba(236, 72, 153, 0.18),
+                0 0 0 1px rgba(236, 72, 153, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Patrón de fondo sutil en el container de cola */
+        .queue-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, 
+                    transparent 0px, 
+                    transparent 40px, 
+                    rgba(236, 72, 153, 0.05) 40px, 
+                    rgba(236, 72, 153, 0.05) 42px),
+                repeating-linear-gradient(-45deg, 
+                    transparent 0px, 
+                    transparent 60px, 
+                    rgba(219, 39, 119, 0.04) 60px, 
+                    rgba(219, 39, 119, 0.04) 62px);
+            z-index: -1;
+        }
+
+        /* Decoración musical en las esquinas */
+        .queue-container::after {
+            content: '♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ 🎵 🎶 🎵 🎶';
+            position: absolute;
+            top: 10px; right: 10px; bottom: 10px; left: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 1.2rem;
+            color: rgba(236, 72, 153, 0.12);
+            z-index: -1;
+            animation: musicPattern 12s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes musicPattern {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .queue-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 2rem; padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(236, 72, 153, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Decoración central en el header de la cola */
+        .queue-header::after {
+            content: '♛';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 10px;
+            color: rgba(236, 72, 153, 0.6);
+            font-size: 1.2rem;
+        }
+        
+        .queue-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2rem; 
+            font-weight: 600; 
+            color: #be185d;
+            position: relative;
+        }
+        
+        /* Badge de contador más elegante */
+        .queue-count {
+            background: linear-gradient(135deg, #ec4899, #db2777, #be185d);
+            color: white; 
+            padding: 0.7rem 1.5rem; 
+            border-radius: 30px;
+            font-weight: 600; 
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Items de canciones con diseño más real */
+        .song-item {
+            display: grid; grid-template-columns: 60px 1fr 120px 150px;
+            gap: 1rem; align-items: center;
+            padding: 1.8rem; margin-bottom: 1.2rem;
+            background: rgba(252, 231, 243, 0.6);
+            border-radius: 15px;
+            border-left: 5px solid #ec4899;
+            transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+            box-shadow: 0 2px 10px rgba(236, 72, 153, 0.1);
+            z-index: 1;
+        }
+        
+        /* Efecto de brillo mejorado en hover */
+        .song-item::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .song-item:hover::before { left: 100%; }
+        .song-item:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 30px rgba(236, 72, 153, 0.25);
+            border-left-width: 6px;
+        }
+        
+        .song-number { font-weight: 600; color: #be185d; font-size: 1.3rem; text-align: center; }
+        .song-info h3 { font-weight: 600; color: #1f2937; margin-bottom: 0.25rem; font-size: 1.15rem; }
+        .song-info p { color: #6b7280; font-size: 0.95rem; }
+        .song-duration { font-weight: 500; color: #be185d; font-size: 1.05rem; }
+        
+        /* Badge de "solicitado por" más elegante */
+        .requested-by {
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            color: white; 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 25px;
+            font-size: 0.9rem; 
+            font-weight: 500; 
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(236, 72, 153, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Estilo mejorado para la canción actual */
+        .now-playing { 
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.25), rgba(219, 39, 119, 0.18)); 
+            border-left-color: #db2777; 
+            border-left-width: 6px;
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.2);
+        }
+        
+        .now-playing .song-number { color: #db2777; }
+        .playing-indicator { display: inline-flex; align-items: center; gap: 0.5rem; color: #db2777; font-weight: 600; }
+        .pulse { width: 10px; height: 10px; background: #db2777; border-radius: 50%; animation: pulse 1.5s infinite; }
+        
+        @keyframes pulse { 
+            0%, 100% { opacity: 1; transform: scale(1); } 
+            50% { opacity: 0.5; transform: scale(1.3); } 
+        }
+        
+        @media (max-width: 768px) {
+            .song-item { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+            .title { font-size: 2.2rem; }
+            .container { padding: 1rem; }
+            .crown-decoration { font-size: 1.5rem; }
+            .gaming-decoration { font-size: 1rem; }
+            .logo { width: 120px; }
+            .header::after { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Agregando más coronas flotantes decorativas -->
+    <div class="crown-decoration crown-1">♛</div>
+    <div class="crown-decoration crown-2">♕</div>
+    <div class="crown-decoration crown-3">♛</div>
+    <div class="crown-decoration crown-4">♕</div>
+    <div class="crown-decoration crown-5">♛</div>
+    <div class="crown-decoration crown-6">♕</div>
+    <div class="crown-decoration crown-7">♛</div>
+    
+    <!-- Elementos gaming flotantes sutiles -->
+    <div class="gaming-decoration rocket-1">🚀</div>
+    <div class="gaming-decoration rocket-2">⚽</div>
+    <div class="gaming-decoration fortnite-1">🏆</div>
+    <div class="gaming-decoration fortnite-2">🎯</div>
+    
+    <div class="fan-decoration fan-1"></div>
+    <div class="fan-decoration fan-2"></div>
+    <div class="fan-decoration fan-3"></div>
+    <div class="fan-decoration fan-4"></div>
+    
+    <div class="container">
+        <header class="header">
+            <!-- Reemplazando con el nuevo logo -->
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/La_Reina_del_Manqueo_Logo-gTEK5kRmbTCKh7bpE5kV3EpFZMEsyy.png" alt="La Reina del Manqueo" class="logo">
+            <h1 class="title">La Reina del Manqueo</h1>
+            <p class="subtitle">Cola de Reproducción en Vivo</p>
+        </header>
+        
+        <div class="queue-container">
+            <div class="queue-header">
+                <h2 class="queue-title">Canciones en Cola</h2>
+                <div class="queue-count">0 canciones</div>
+            </div>
+            <!-- Aquí el script va a inyectar las canciones -->
+        </div>
+    </div>
+
+    <!-- === SCRIPT ORIGINAL SIN CAMBIOS === -->
+    <script>
+    (function () {
+      const ENDPOINT = '/cola';
+      const REFRESH_MS = 4000;
+
+      function clearSongItems(container) {
+        const items = container.querySelectorAll('.song-item');
+        items.forEach(i => i.remove());
+        const oldMsg = container.querySelector('.no-queue-msg');
+        if (oldMsg) oldMsg.remove();
+      }
+
+      function createSongItem(song, index, isNow) {
+        const div = document.createElement('div');
+        div.className = 'song-item' + (isNow ? ' now-playing' : '');
+
+        const number = document.createElement('div');
+        number.className = 'song-number';
+        if (isNow) {
+          number.innerHTML = '<div class="playing-indicator"><div class="pulse"></div>♪</div>';
+        } else {
+          number.textContent = index + 1;
+        }
+
+        const info = document.createElement('div');
+        info.className = 'song-info';
+        const h3 = document.createElement('h3');
+        h3.textContent = song.title || '—';
+        const p = document.createElement('p');
+        p.textContent = song.artist || '';
+        info.appendChild(h3);
+        info.appendChild(p);
+
+        const dur = document.createElement('div');
+        dur.className = 'song-duration';
+        dur.textContent = song.duration || '';
+
+        const req = document.createElement('div');
+        req.className = 'requested-by';
+        req.textContent = song.requestedBy || '';
+
+        div.appendChild(number);
+        div.appendChild(info);
+        div.appendChild(dur);
+        div.appendChild(req);
+        return div;
+      }
+
+      async function loadQueue() {
+        try {
+          const res = await fetch(ENDPOINT, { cache: 'no-store' });
+          const data = await res.json();
+          const songs = (data && data.songs) ? data.songs : [];
+          const queueCountEl = document.querySelector('.queue-count');
+          const queueContainer = document.querySelector('.queue-container');
+
+          if (!queueCountEl || !queueContainer) return;
+
+          queueCountEl.textContent = (songs.length) + ' canciones';
+
+          clearSongItems(queueContainer);
+
+          if (!songs.length) {
+            const p = document.createElement('p');
+            p.className = 'no-queue-msg';
+            p.style.padding = '1rem';
+            p.style.color = '#6b7280';
+            p.textContent = 'No hay canciones en la cola 🎧';
+            queueContainer.appendChild(p);
+            return;
+          }
+
+          songs.forEach((s, i) => {
+            const item = createSongItem(s, i, i === 0);
+            queueContainer.appendChild(item);
+          });
+        } catch (err) {
+          // console.error('Error cargando cola', err);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        loadQueue();
+        setInterval(loadQueue, REFRESH_MS);
+      });
+    })();
+    </script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Font Awesome 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Reina del Mangueo - Cola de Reproducción</title>
@@ -509,6 +511,62 @@
             .love-fire-decoration { width: 70px; height: 45px; }
             .butterfly-decoration { width: 30px; height: 22px; }
         }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 2px solid rgba(236, 72, 153, 0.3);
+            box-shadow: 0 -4px 15px rgba(236, 72, 153, 0.1);
+            border-radius: 15px 15px 0 0;
+            font-weight: 500;
+            color: #be185d;
+        }
+
+        .footer p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer .social-links a {
+            color: #db2777;
+            font-size: 1.8rem; /* tamaño de iconos (FA) */
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hover para íconos Font Awesome */
+        .footer .social-links a:hover {
+            color: #a21caf;
+            transform: scale(1.2);
+            text-shadow: 0 2px 8px rgba(236, 72, 153, 0.5);
+        }
+
+        /* Kick SVG icon */
+        .footer .social-links svg.kick-icon {
+            width: 1.8rem;
+            height: 1.8rem;
+            display: inline-block;
+            fill: currentColor; /* toma el color del enlace */
+            transition: all 0.3s ease;
+        }
+
+        .footer .social-links a:hover svg.kick-icon {
+            transform: scale(1.2);
+        }
+
     </style>
 </head>
 <body>
@@ -529,13 +587,6 @@
     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-4">
     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-5">
     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-culture-of-japan-vector-japan-fan-5a818c9f944925.6831504615184395836074-B872S0x0jFgeV0ccexVcTUJz7GdNEo.png" alt="" class="pink-fan-decoration pink-fan-6">
-    
-    <!-- Decoraciones de fuego con "Love" -->
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-1">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-2">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-3">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-4">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kisspng-flames-of-love-flames-of-love-fire-english-word-love-flame-5a86b3a64540e9.3321493915187772542837.png-7NankJeyIWRHyG15O5xPigHdGeReX8.jpeg" alt="" class="love-fire-decoration love-fire-5">
     
     <!-- Decoraciones de mariposas -->
     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ezgif.com-resize_49-wBxqXJialFqNvI49oNscsnKmCRjur5.png" alt="" class="butterfly-decoration butterfly-1">
@@ -585,6 +636,18 @@
             <!-- Aquí el script va a inyectar las canciones -->
         </div>
     </div>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>Creado por Isaac</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@borinkanamari" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://twitter.com/borinkanamari" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/borinkanamari" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@borinkanamari" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://discord.gg/v6UdPpUEW6" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+        </footer>
 
     <!-- === SCRIPT ORIGINAL SIN CAMBIOS === -->
     <script>
